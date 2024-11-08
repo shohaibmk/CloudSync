@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 const PORT_WEATHER = 3002;
-const WEATHER_API_KEY = "bf57f98615cf4dc4a67224416232110";
+const WEATHER_API_KEY = `${WEATHER_KEY}`;
 
 /**
  * Middleware for cors

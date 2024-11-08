@@ -8,7 +8,7 @@ const app = express();
 const PORT_CHECKOUT = 3001;
 
 // This is a public sample test API key.
-const stripe = new Stripe('rk_test_51O8WroIimwnGoQGfD5AnqkI4SxYn61AkjlQTweNre8CTda95EtsF4U9IhpmJXGkTuj5ltYcdoubBvaXndIXKiZdK00UNKwAxaY');
+const stripe = new Stripe(`${STRIPE_KEY}`);
 
 /**
  * Middleware to handle cors
@@ -40,7 +40,7 @@ app.post("/create-payment-intent", async (req, res) => {
         automatic_payment_methods: {
             enabled: true,
         },
-        payment_method_configuration: 'pmc_1O8YAnIimwnGoQGfCz3dPEHq'//this key is available on the Stripe configuration dashboard 
+        payment_method_configuration: `${STRIPE_CONFIG_ID}`//this key is available on the Stripe configuration dashboard 
     });
 
     res.send({

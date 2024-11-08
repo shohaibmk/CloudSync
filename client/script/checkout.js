@@ -3,7 +3,7 @@ if (localStorage.getItem('uid') == null) {
 }
 
 // This is your test publishable API key.
-const stripe = Stripe("pk_test_51O8WroIimwnGoQGfLMZDMqkkGpSljm3oBJUIUX3v635fA92wrq3y1pvhvQtjnTtbVzJJyPqMBZ4adB6Wu1hLm5lh009j9jUzhI");
+const stripe = Stripe(`${STRIPE_KEY}`);
 
 // The items the customer wants to buy
 const items = [{ id: "premium" }];

@@ -4,14 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithCredential, GoogleAuthProvider } from "firebase/auth";
 
 // Web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyB6B4P3WH23M5_8RVApxIPwBJP3o7X9jcM",
-    authDomain: "whether-app-406101.firebaseapp.com",
-    projectId: "whether-app-406101",
-    storageBucket: "whether-app-406101.appspot.com",
-    messagingSenderId: "714021677303",
-    appId: "1:714021677303:web:a2ac7e655a11cdbf5acbf2"
-};
+const firebaseConfig = `${FIREBASE_CONFIG}`;
 
 const app = express();
 const PORT_SERVER = 3003;

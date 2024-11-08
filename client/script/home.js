@@ -295,7 +295,7 @@ function onPlaceChnaged() {
 
 function loadGoogleMapsScript() {
     var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB6B4P3WH23M5_8RVApxIPwBJP3o7X9jcM&libraries=places&callback=initMap';
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_PLACES_KEY}`;
     script.async = true;
     document.head.appendChild(script);
 }

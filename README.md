@@ -1,4 +1,4 @@
-## Project: Weather App
+## Project: Cloud Sync
 
 ## Before we run:
 1. Make sure MongoDB Database is installed and and running on `mongodb://localhost:27017`

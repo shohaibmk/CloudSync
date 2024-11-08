@@ -20,7 +20,7 @@
 2. For payments use the card number `4242 4242 4242 4242`, rest card details like expiry date and pincode can be any valid random nummber.
 3. Make sure to enter URL as `localhost:3000` and not `127.0.0.1:3000` as this is an issue with Google Cloud Platform where it does not recognize 127.0.0.1 as a local address.
 
-## 3rd-Party APIs used (No Additional Key or Configurations needed, everything is already in the project)
+## 3rd-Party APIs used 
 
 1. Stripe - Third party payment processor, used to process the payments.
 2. Weather API - Get current weather and forcast for upto 2 days.

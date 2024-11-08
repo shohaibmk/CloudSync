@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="/home/js" defer></script>
+  <style>
+    .makeButton {
+      cursor: pointer;
+    }
+
+    .borderBlue {
+      border-color: #749FFF !important;
+    }
+  </style>
+</head>
+
+<body class="container-fluid">
+  <nav class="navbar row" style="background-color: #74b9ff;">
+    <h1 style="width: max-content;font-family: monospace;font-variant-caps: petite-caps;" class="col-2 makeButton">
+      Weather App</h1>
+    <input id="searchBox" class="col-5" style="margin-left: 5%;" type="text" class="form-control"
+      placeholder="Search a City, State or Pincode" aria-label="First name">
+    <span id="buttonMyLocation" class="col-1 border rounded makeButton text-nowrap me-3"
+      style="border-color:#0984e3 !important;width: max-content;font-size: medium;">📍My Location</span>
+    <span class="col-1"></span>
+    <div class="dropdown-center col-1 justify-content-end">
+      <button id="dropdownText" class="btn dropdown-toggle" style="background-color: #74b9ff;" type="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Guest
+      </button>
+      <ul id="dropdownUL" class="dropdown-menu">
+        <li><span id="dropdownLogin" class="makeButton ps-3">Login</span></li>
+        <li><span id="dropdownSetting" class="makeButton ps-3">Settings</span>
+        <li><span id="dropdownGetPremium" class="makeButton ps-3">Get Premium</span></li>
+      </ul>
+    </div>
+
+    <!-- Navbar content -->
+  </nav>
+  <!-- Search Bar Div-->
+  <div id="divDailyWeatherFake" class="" style="height: 300px;">
+  </div>
+  <div id="divDailyWeather" class="" style="display: none;">
+    <div class="row">
+      <span class="col-2"></span>
+      <span id="spanPlaceName" class="col-8" style="text-align: center;font-size: 30px;"></span>
+
+      <!-- Add Button Div -->
+      <div class="col-2 d-flex justify-content-end" style="height: max-content;">
+        <span id="buttonAdd" class="border rounded ps-1 pe-1 makeButton borderBlue"
+          style="height: max-content;width: max-content;display: none;user-select: none;">⨁ Add</span>
+      </div>
+    </div>
+
+    <!-- Temperature Div -->
+    <div class="d-flex justify-content-center align-items-center align-self-center" style="width: max-content;">
+
+      <!-- Image Div -->
+      <div class="d-flex justify-content-end">
+        <img id="iconCondition" src="" class="" alt="" style="border-color: #749FFF !important;">
+      </div>
+
+      <!-- Temperature Data Div -->
+      <div class="d-flex flex-column ms-5 justify-content-center" style="width: max-content;text-align: center;">
+        <span id="spanTemperature" style="font-size: 40px;font-variant: unicase"></span>
+        <span id="spanTemperatureFeelsLike"></span>
+        <span id="spanConditionText"></span>
+      </div>
+    </div>
+
+    <!--Forcast Div-->
+    <div id="divForcast" class="row justify-content-center ps-3 pe-3 pt-3" style="display: none; text-align: center;">
+      <div class="col d-flex flex-column border rounded-start border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime1"></span>
+        <img id="iconForcast1" src="" class="" alt="">
+        <span id="temperaturForcast1"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime2"></span>
+        <img id="iconForcast2" src="" class="" alt="">
+        <span id="temperaturForcast2"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime3"></span>
+        <img id="iconForcast3" src="" class="" alt="">
+        <span id="temperaturForcast3"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime4"></span>
+        <img id="iconForcast4" src="" class="" alt="">
+        <span id="temperaturForcast4"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime5"></span>
+        <img id="iconForcast5" src="" class="" alt="">
+        <span id="temperaturForcast5"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime6"></span>
+        <img id="iconForcast6" src="" class="" alt="">
+        <span id="temperaturForcast6"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime7"></span>
+        <img id="iconForcast7" src="" class="" alt="">
+        <span id="temperaturForcast7"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime8"></span>
+        <img id="iconForcast8" src="" class="" alt="">
+        <span id="temperaturForcast8"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime9"></span>
+        <img id="iconForcast9" src="" class="" alt="">
+        <span id="temperaturForcast9"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime10"></span>
+        <img id="iconForcast10" src="" class="" alt="">
+        <span id="temperaturForcast10"></span>
+      </div>
+      <div class="col d-flex flex-column border border-end-0" style="border-color: #749FFF !important;">
+        <span id="forcastTime11"></span>
+        <img id="iconForcast11" src="" class="" alt="">
+        <span id="temperaturForcast11"></span>
+      </div>
+      <div class="col d-flex flex-column border rounded-end" style="border-color: #749FFF !important;">
+        <span id="forcastTime12"></span>
+        <img id="iconForcast12" src="" class="" alt="">
+        <span id="temperaturForcast12"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Weather locations titles Div -->
+  <div id="divWeatherLocationTiles" class="d-flex justify-content-around flex-wrap"
+    style="margin-left: 20%;margin-right: 20%;">
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login Required</h1>
+
+        </div>
+        <div class="modal-body">
+          You must be logged in to get Premium
+        </div>
+        <div class="modal-footer">
+          <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button id="login" type="button" class="btn btn-primary">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+
+        <strong class="me-auto">Weather App</strong>
+        <small>0 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="toast-body" class="toast-body">
+        You need to be premium user to add more than 2 tiles.
+        Get premium <span id="buttonToastLogin" style="color: blue;" class="makeButton">here</span>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>
